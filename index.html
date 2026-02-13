@@ -1,12 +1,296 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Zehaifi Realty | Houston Real Estate</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-  <h1>Zehaifi Realty</h1>
-  <p>Houston Real Estate Services</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zehaifi Realty | Houston Real Estate Services</title>
+    <meta
+      name="description"
+      content="Houston real estate services: buying, selling, leasing, and investor support. Serving Houston metro and surrounding areas."
+    />
+
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --card: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --line: rgba(255, 255, 255, 0.08);
+        --accent: #d4af37; /* gold */
+        --accent2: #60a5fa; /* blue */
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background: radial-gradient(900px 600px at 20% 0%, rgba(212,175,55,0.18), transparent 60%),
+          radial-gradient(900px 600px at 80% 20%, rgba(96,165,250,0.18), transparent 55%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .container { max-width: 1100px; margin: 0 auto; padding: 0 18px; }
+
+      header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(10px);
+        background: rgba(11, 15, 20, 0.7);
+        border-bottom: 1px solid var(--line);
+        z-index: 10;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        gap: 12px;
+      }
+      .brand {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .brand span { color: var(--accent); }
+      .menu {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .pill {
+        border: 1px solid var(--line);
+        padding: 8px 12px;
+        border-radius: 999px;
+        color: var(--text);
+        background: rgba(17, 24, 39, 0.55);
+      }
+      .pill.primary {
+        border-color: rgba(212,175,55,0.35);
+        background: rgba(212,175,55,0.12);
+      }
+
+      .hero {
+        padding: 54px 0 22px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.35fr 0.65fr;
+        gap: 18px;
+      }
+      @media (max-width: 860px) {
+        .hero-grid { grid-template-columns: 1fr; }
+      }
+
+      h1 {
+        font-size: clamp(30px, 4vw, 46px);
+        margin: 0 0 10px;
+        line-height: 1.12;
+      }
+      .subtitle {
+        color: var(--muted);
+        font-size: 16px;
+        margin: 0 0 18px;
+        max-width: 58ch;
+      }
+
+      .card {
+        background: rgba(17, 24, 39, 0.72);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px;
+      }
+      .grid3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      @media (max-width: 860px) {
+        .grid3 { grid-template-columns: 1fr; }
+      }
+
+      .kicker { color: var(--accent); font-weight: 700; font-size: 13px; letter-spacing: 0.3px; text-transform: uppercase; }
+      .section {
+        padding: 28px 0;
+      }
+      .section h2 {
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+      .muted { color: var(--muted); }
+      .list { margin: 10px 0 0; padding-left: 18px; color: var(--text); }
+      .list li { margin: 6px 0; color: var(--muted); }
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      @media (max-width: 860px) {
+        .split { grid-template-columns: 1fr; }
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 20px 0 36px;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .fineprint { margin-top: 10px; opacity: 0.95; }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 12px;
+        background: rgba(17, 24, 39, 0.55);
+        color: var(--muted);
+      }
+      .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent2); display: inline-block; }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="nav">
+          <div class="brand" aria-label="Zehaifi Realty">
+            Zehaifi <span>Realty</span>
+          </div>
+
+          <nav class="menu" aria-label="Primary">
+            <a class="pill" href="#services">Services</a>
+            <a class="pill" href="#areas">Areas</a>
+            <a class="pill" href="#contact">Contact</a>
+            <a class="pill primary" href="IABS.pdf" target="_blank" rel="noopener">IABS (PDF)</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="card">
+              <div class="kicker">Houston Real Estate Services</div>
+              <h1>Clear guidance for buying, selling, and leasing in Houston.</h1>
+              <p class="subtitle">
+                Practical, responsive support for clients who value speed, clarity, and clean execution.
+              </p>
+
+              <div class="menu" style="justify-content:flex-start; gap:10px;">
+                <a class="pill primary" href="#contact">Request a call</a>
+                <a class="pill" href="#services">View services</a>
+              </div>
+
+              <div style="margin-top:14px;">
+                <span class="badge"><span class="dot"></span> Fast response • Straight answers • Clean paperwork</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="kicker">Quick Links</div>
+              <ul class="list">
+                <li><a href="#services">Services overview</a></li>
+                <li><a href="#areas">Areas served</a></li>
+                <li><a href="IABS.pdf" target="_blank" rel="noopener">Information About Brokerage Services (IABS)</a></li>
+              </ul>
+              <p class="muted" style="margin-top:12px;">
+                Tip: bookmark this page for clients, invoices, and compliance docs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <h2>Services</h2>
+          <p class="muted">Choose the lane you’re in — I’ll handle the steps, paperwork, and follow-through.</p>
+
+          <div class="grid3" style="margin-top:12px;">
+            <div class="card">
+              <div class="kicker">Buyers</div>
+              <ul class="list">
+                <li>Search strategy + property shortlists</li>
+                <li>Offer writing + negotiation</li>
+                <li>Inspection + closing coordination</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="kicker">Sellers</div>
+              <ul class="list">
+                <li>Pricing + market positioning</li>
+                <li>Listing prep + launch plan</li>
+                <li>Showings + contract-to-close</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="kicker">Leasing</div>
+              <ul class="list">
+                <li>Rental search + touring plan</li>
+                <li>Application + approval support</li>
+                <li>Move-in timeline + documentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="areas" class="section">
+        <div class="container">
+          <h2>Areas served</h2>
+          <div class="split" style="margin-top:12px;">
+            <div class="card">
+              <div class="kicker">Houston Metro</div>
+              <p class="muted" style="margin:10px 0 0;">
+                Houston, Galleria/Uptown, Montrose, Heights, Spring Branch, Memorial, Midtown, EaDo, and surrounding areas.
+              </p>
+            </div>
+            <div class="card">
+              <div class="kicker">Extended Range</div>
+              <p class="muted" style="margin:10px 0 0;">
+                Conroe to Galveston corridor (case-by-case depending on timeline and property type).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Contact</h2>
+          <div class="card" style="margin-top:12px;">
+            <p style="margin:0 0 6px;"><strong>Abraham Zehaifi</strong></p>
+            <p class="muted" style="margin:0 0 10px;">
+              Email: <a href="mailto:zehaifirealty@gmail.com">zehaifirealty@gmail.com</a>
+            </p>
+            <p class="muted" style="margin:0;">
+              If you want, tell me: (1) buy/sell/rent, (2) target area/zip, (3) timeline, (4) budget, (5) any constraints.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="fineprint">
+          This website is informational. For Texas brokerage disclosures, see the IABS document linked above.
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
